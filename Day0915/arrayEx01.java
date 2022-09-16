@@ -45,13 +45,21 @@ public class arrayEx01 {
 		// 정렬
 		for(int i=0; i<arr.length; i++) {
 			for(int j=i+1; j<arr.length; j++) {
+				
 				if(arr[i]>arr[j]) {
 					int temp = arr[i];
 					arr[i] = arr[j];
 					arr[j] = temp;
 				}
+				for(int k:arr) System.out.print(k+" ");
+				System.out.println("j : "+j);
+				System.out.println();
 			}
 		}
+		/* 0~끝번지까지 순차적으로 나아가며
+		 * 자리에 알맞는 숫자를 삽입하는 insertion sort 기법
+		*/
+		
 		for(int i:arr) System.out.print(i+" ");
 		System.out.println();
 	}
