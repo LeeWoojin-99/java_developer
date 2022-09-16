@@ -18,7 +18,7 @@ public class 숙제 {
 		Scanner scan = new Scanner(System.in);
 		
 		String inputStr; // 사용자의 입력을 받을 String 변수 inputStr
-		int computerInt = (int)(Math.random()*2)+1; // 컴퓨터의 랜덤값 0, 1, 2 중 하나가 들어가는 computerInt
+		int computerInt = (int)(Math.random()*3); // 컴퓨터의 랜덤값 0, 1, 2 중 하나가 들어가는 computerInt
 		String computerStr; // 컴퓨터의 입력값이 String형으로 변환된 후 저장될 computerStr
 		int inputInt; // 사용자의 입력값이 Integer형으로 변환된 후 저장될 inputInt
 		
