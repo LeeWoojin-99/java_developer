@@ -28,30 +28,11 @@ public class 숙제 {
 
 		// 사용자의 입력값 자료형 변환
 		// String => Integer
-		switch(inputStr) {
-		case "가위":
-			inputInt = 0;
-			break;
-		case "바위":
-			inputInt = 1;
-			break;
-		case "보":
-			inputInt = 2;
-			break;
-		default:
-			inputInt = -1;
-			break;
-		}
+		inputInt = strToInt(inputStr);
 		
 		// 컴퓨터의 랜덤값 자료형 변환
 		// Integer => String
-		if(computerInt == 0) {
-			computerStr = "가위";
-		}else if(computerInt == 1) {
-			computerStr = "바위";
-		}else{
-			computerStr = "보";
-		}
+		computerStr = intToStr(computerInt);
 		
 		// 내가 낸 수와 컴퓨터가 낸 수를 출력
 		System.out.printf("당신은 %s를 냈고 컴퓨터는 %s를 냈습니다.\n", inputStr, computerStr);
