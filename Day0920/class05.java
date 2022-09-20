@@ -6,6 +6,8 @@ public class class05 {
 		tv1.printPower();
 		tv1.powerToggle();
 		tv1.printPower();
+		tv1.powerToggle();
+		tv1.printPower();
 		tv1.volDown();
 		
 	}
@@ -40,12 +42,11 @@ class TV{
 	}
 	
 	public void powerToggle() {
-		if(power == true) {
+		power = !power;
+		if(power == false) {
 			System.out.println("전원을 끕니다.");
-			power = false;
 		}else {
 			System.out.println("전원을 켭니다.");
-			power = true;
 		}
 	}
 	public void printPower() {
