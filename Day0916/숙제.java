@@ -34,14 +34,14 @@ public class 숙제 {
 		// Integer => String
 		computerStr = intToStr(computerInt);
 		
-		// 내가 낸 수와 컴퓨터가 낸 수를 출력
-		System.out.printf("당신은 %s를 냈고 컴퓨터는 %s를 냈습니다.\n", inputStr, computerStr);
-		
 		// 출력부
 		if(inputInt == -1) {
 			// "가위" "바위" "보" 가 아닌 다른 입력이 들어온다면 아래 출력문을 실행
 			System.out.println("입력이 잘못되었습니다.");
 		}else {
+			// 내가 낸 수와 컴퓨터가 낸 수를 출력
+			System.out.printf("당신은 %s를 냈고 컴퓨터는 %s를 냈습니다.\n", inputStr, computerStr);
+			
 			if(RPS(inputInt, computerInt)>0) {
 				System.out.println("승리");
 			}else if(RPS(inputInt, computerInt)<0) {
