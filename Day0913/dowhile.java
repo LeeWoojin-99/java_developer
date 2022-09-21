@@ -18,5 +18,7 @@ public class dowhile {
 		}while(!input.equals("q"));
 
 		System.out.println("exit");
+
+		scanner.close();
 	}
 }

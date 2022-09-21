@@ -28,5 +28,6 @@ public class if03 {
 			System.out.println("C");
 		}else System.out.println("D");
 		
+		scanner.close();
 	}
 }

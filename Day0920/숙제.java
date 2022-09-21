@@ -3,6 +3,9 @@ package Day0920;
 public class 숙제 {
 	public static void main(String[] args) {
 		System.out.println(solution(5, 1));
+		// 1 2 3 4 5
+		// 5 5 5
+		// 15
 	}
 	
 	/*
@@ -15,20 +18,9 @@ public class 숙제 {
 	 * method name : solution
 	 */
 	static int solution(int a, int b) {
-		int result = 0;
-		
-		int min, max;
-		if(a > b) {
-			max = a;
-			min = b;
-		}else if(a < b) {
-			max = b;
-			min = a;
-		}else { // a == b
-			return a;
-		}
-		
-		result += min;
-		return result + solution(min+1, max);
+		int min = Math.min(a, b);
+		int max = Math.max(a, b);
+		if (a == b) return a;
+		return min + solution(min+1, max);
 	}
 }
