@@ -24,15 +24,9 @@ public class 숙제 {
 		String imageExt[] = new String[] {"jpg", "png", "gif", "jpeg"};
 		
 		System.out.println("5개의 파일명을 입력해주세요");
-		for(int i=0; i<fileName.length; i++) {
-			fileName[i] = sc.next();
-		}
+		for(int i=0; i<fileName.length; i++) fileName[i] = sc.next();
 		
-		for(String i: fileName) {
-			if(isContain(i, imageExt)) {
-				System.out.println(i);
-			}
-		}
+		for(String i: fileName) if(isContain(i, imageExt)) System.out.println(i);
 		
 		sc.close();
 	}
@@ -43,7 +37,8 @@ public class 숙제 {
 	매개변수 : 배열, 찾는 값
 	*/
 	static boolean isContain(String str, String arr[]) {
-		for(String i: arr) if(str.contains(i)) return true;
+		str = str.substring(str.indexOf(".")+1, str.length());
+		for(String i: arr) if(str.equals(i)) return true;
 		return false;
 	}
 }
