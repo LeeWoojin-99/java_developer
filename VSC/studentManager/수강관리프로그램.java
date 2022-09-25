@@ -34,50 +34,49 @@ Subject Class
 Management Class
 검색 추가 삭제 를 돕는 클래스
 */
-
+/* 
+12345678
+홍길동
+12345678 1234567
+학부학부1
+학과학과1
+ */
 public class 수강관리프로그램 {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		String input;
+		String input = "";
 		Management mg = new Management();
 		
 		while(true) {
-			System.out.println("- - - 메뉴 - - -");
-			System.out.printf("1. 학생 등록\n",
-					"2. 학생 리스트\n",
-					"3. 학생 검색\n",
-					"4. 수강 신청\n",
-					"5. 수강 철회\n",
-					"6. 종료\n");
+			System.out.println("\n- - - 메뉴 - - -");
+			// System.out.printf("1. 학생 등록\n" + 
+			// 		"2. 학생 리스트\n" + 
+			// 		"3. 학생 검색\n" + 
+			// 		"4. 수강 신청\n" + 
+			// 		"5. 수강 철회\n" + 
+			// 		"6. 종료\n");
 			
 			System.out.println("메뉴를 숫자로 입력해주세요");
 			input = sc.next();
 			
 			if(input.equals("1")) {
-				System.out.println("학생을 등록합니다.");
 				mg.insertStudent(sc);
 			}else if(input.equals("2")) {
-				System.out.println("학생 리스트입니다.");
 				mg.printStudent();
 			}else if(input.equals("3")) {
-				System.out.println("학생을 검색합니다.");
 				mg.searchStudent(sc);
 			}else if(input.equals("4")) {
-				System.out.println("수강 신청합니다.");
-				
+				mg.registerSubject(sc);
 			}else if(input.equals("5")) {
-				System.out.println("수강 철회합니다.");
-				
+				mg.deleteSubject(sc);
 			}else if(input.equals("6")) {
 				System.out.println("종료합니다.");
 				break;
 			}else {
-				System.out.println("입력이 잘못되었나봐요. 다시 입력해주세요.");
+				System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
 			}
-			
 		}
-		
 		sc.close();
 	}
 }

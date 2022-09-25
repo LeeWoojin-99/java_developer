@@ -28,11 +28,11 @@ public class Student {
 	
 	public void printStudent() {
 		System.out.printf(
-				"학번 : " + studentID +
-				"이름 : " + name +
-				"주민번호 : " + personalID +
-				"학부 : " + faculty +
-				"학과 : " + department);
+				"\n학번 : " + studentID +
+				"\n이름 : " + name +
+				"\n주민번호 : " + personalID +
+				"\n학부 : " + faculty +
+				"\n학과 : " + department + "\n");
 		printSubjects();
 	}
 

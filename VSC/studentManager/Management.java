@@ -10,17 +10,21 @@ public class Management implements Program {
 
 	@Override
 	public void printStudent() {
-		for(Student i: student){
-			i.printStudent();
+		System.out.printf("student[0] == null => ", student[0] == null);
+		System.out.println(student[0] == null);
+		for(int i=0; i<stdCount; i++){
+			System.out.printf("student[%d] == null => ", i, student[stdCount] == null); // test code
+			student[stdCount].printStudent();
 		}
+		// for(Student i: student){
+		// 	i.printStudent();
+		// }
 	}
 
 	@Override
 	public void insertStudent(Scanner scan) {
 		// 학생을 추가
 		String studentID, name, personalID, faculty, department;
-		
-		System.out.println("학생을 등록합니다.");
 		
 		// 학생 정보 입력
 		System.out.println("학생의 정보를 입력해주세요");
@@ -32,7 +36,10 @@ public class Management implements Program {
 		department = scan.next();
 		
 		student[stdCount] = new Student(studentID, name, personalID, faculty, department); // Student형 객체 생성
+		student[stdCount].printStudent();
+
 		stdCount++;
+		System.out.println("학생 등록을 완료하였습니다");
 	}
 
 	@Override
