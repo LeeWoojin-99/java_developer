@@ -28,11 +28,11 @@ public class Student {
 	
 	public void printStudent() {
 		System.out.printf(
-				"학번 : " + studentID +
-				"이름 : " + name +
-				"주민번호 : " + personalID +
-				"학부 : " + faculty +
-				"학과 : " + department);
+				"\n학번 : " + studentID +
+				"\n이름 : " + name +
+				"\n주민번호 : " + personalID +
+				"\n학부 : " + faculty +
+				"\n학과 : " + department + "\n");
 		printSubjects();
 	}
 
@@ -49,24 +49,101 @@ public class Student {
 		// Subject 인스턴스를 생성
 
 		subject[subjectCount] = new Subject(subjectID, name, credit, time, professor);
+		subjectCount++;
+		if(subjectCount == subject.length) {
+			// 배열이 꽉 찼을 때
+			// 배열을 확장
+			Subject subjectTemp[] = new Subject[subject.length+1];
+			System.arraycopy(subject, 0, subjectTemp, 0, subject.length);
+			subject = subjectTemp;
+			System.out.println("subject배열을 확장하였습니다.");
+		}
 	}
 
 	public void deleteSubject(String subjectID){
 		// 수강 철회
+		
+		
+		
 		for(int i=0; i<subjectCount; i++){
 			if(subject[i].getSubjectID().equals(subjectID)){ // 삭제하려는 수강 과목을 찾았다면
 				subject[i] = null;
-			}
-			if(subject[i]==null && i+1<subjectCount){
-				// i번지가 null이면서
-				// i+1이 subjectCount(수강 과목의 총 개수)보다 작을 때 => i번지 뒤에 수강 과목이 더 있을 때
-				
-				subject[i] = subject[i+1];
+				for(int j=i; j<subjectCount-1; j++) {
+					subject[j] = subject[j+1];
+					subject[j+1] = null;
+					/*
+					1 2 3
+					null 2 3
+					2 2 3
+					2 3 3
+					맨 뒤의 값을 null로 바꿔줘야 한다.
+					*/
+				}
+				subject[subjectCount-1] = null;
+				subjectCount--;
 			}
 		}
 	}
 
-	public String getStudentID(){
-		return this.studentID;
+	// getter setter
+	public Subject[] getSubject() {
+		return subject;
 	}
+
+	public void setSubject(Subject[] subject) {
+		this.subject = subject;
+	}
+
+	public int getSubjectCount() {
+		return subjectCount;
+	}
+
+	public void setSubjectCount(int subjectCount) {
+		this.subjectCount = subjectCount;
+	}
+
+	public String getStudentID() {
+		return studentID;
+	}
+
+	public void setStudentID(String studentID) {
+		this.studentID = studentID;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPersonalID() {
+		return personalID;
+	}
+
+	public void setPersonalID(String personalID) {
+		this.personalID = personalID;
+	}
+
+	public String getFaculty() {
+		return faculty;
+	}
+
+	public void setFaculty(String faculty) {
+		this.faculty = faculty;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+
+	
+	
+	
 }

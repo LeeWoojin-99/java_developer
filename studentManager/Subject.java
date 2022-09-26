@@ -18,18 +18,58 @@ public class Subject {
 		this.credit = credit;
 		this.time = time;
 		this.professor = professor;
+		
+		System.out.println("수강 신청이 완료되었습니다.");
 	}
 	
 	public String toString() {
 		String returnStr = "과목 코드 : "+subjectID+
-				"과목명 : "+name+
-				"학점 : "+credit+
-				"시수 : "+time+
-				"교수명 : "+professor;
+				", 과목명 : "+name+
+				", 학점 : "+credit+
+				", 시수 : "+time+
+				", 교수명 : "+professor;
 		return returnStr;
 	}
 
-	public String getSubjectID(){
-		return this.subjectID;
+	public String getSubjectID() {
+		return subjectID;
 	}
+
+	public void setSubjectID(String subjectID) {
+		this.subjectID = subjectID;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCredit() {
+		return credit;
+	}
+
+	public void setCredit(String credit) {
+		this.credit = credit;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(String professor) {
+		this.professor = professor;
+	}
+
+	
 }
