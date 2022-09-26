@@ -8,10 +8,17 @@ public class Lotto {
 	public Lotto() {}
 	
 	public void createLotto(Scanner sc) throws Exception {
+		int input;
 		System.out.println("로또 번호를 입력해주세요.");
 		
 		for(int i=0; i<lottoArr.length; i++) {
-			lottoArr[i] = sc.nextInt();
+			input = sc.nextInt();
+			if(checkDuplication(lottoArr, input)) {
+				lottoArr[i] = input;
+			}else {
+				System.out.println("중복된 숫자입니다. 다른 숫자를 입력해주세요.");
+				i--;
+			}
 		}
 		
 		// 입력받은 값을 int형으로 변환
