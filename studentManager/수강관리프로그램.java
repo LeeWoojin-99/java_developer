@@ -93,28 +93,46 @@ public class 수강관리프로그램 {
 		String input = "";
 		Management mg = new Management();
 		
+		loop:
 		while(true) {
 			mg.printMenu();
 			
 			System.out.println("메뉴를 숫자로 입력해주세요");
 			input = sc.next();
 			
-			if(input.equals("1")) {
-				mg.insertStudent(sc);
-			}else if(input.equals("2")) {
-				mg.printStudent();
-			}else if(input.equals("3")) {
-				mg.searchStudent(sc);
-			}else if(input.equals("4")) {
-				mg.registerSubject(sc);
-			}else if(input.equals("5")) {
-				mg.deleteSubject(sc);
-			}else if(input.equals("6")) {
-				System.out.println("종료합니다.");
-				break;
-			}else {
+			switch(input) {
+			case "1":
+				mg.insertStudent(sc); break;
+			case "2":
+				mg.printStudent(); break;
+			case "3":
+				mg.searchStudent(sc); break;
+			case "4":
+				mg.registerSubject(sc); break;
+			case "5":
+				mg.deleteSubject(sc); break;
+			case "6":
+				System.out.println("종료합니다."); break loop;
+			default:
 				System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
 			}
+			
+//			if(input.equals("1")) {
+//				mg.insertStudent(sc);
+//			}else if(input.equals("2")) {
+//				mg.printStudent();
+//			}else if(input.equals("3")) {
+//				mg.searchStudent(sc);
+//			}else if(input.equals("4")) {
+//				mg.registerSubject(sc);
+//			}else if(input.equals("5")) {
+//				mg.deleteSubject(sc);
+//			}else if(input.equals("6")) {
+//				System.out.println("종료합니다.");
+//				break;
+//			}else {
+//				System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
+//			}
 		}
 		sc.close();
 	}

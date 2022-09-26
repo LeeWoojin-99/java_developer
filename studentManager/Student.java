@@ -60,29 +60,23 @@ public class Student {
 		}
 	}
 
-	public void deleteSubject(String subjectID){
+	public void deleteSubject(int index){
 		// 수강 철회
-		
-		
-		
-		for(int i=0; i<subjectCount; i++){
-			if(subject[i].getSubjectID().equals(subjectID)){ // 삭제하려는 수강 과목을 찾았다면
-				subject[i] = null;
-				for(int j=i; j<subjectCount-1; j++) {
-					subject[j] = subject[j+1];
-					subject[j+1] = null;
-					/*
-					1 2 3
-					null 2 3
-					2 2 3
-					2 3 3
-					맨 뒤의 값을 null로 바꿔줘야 한다.
-					*/
-				}
-				subject[subjectCount-1] = null;
-				subjectCount--;
-			}
+	
+		subject[index] = null;
+		for(int i=index; i<subjectCount-1; i++) {
+			subject[i] = subject[i+1];
+			subject[i+1] = null;
+			/*
+			1 2 3
+			null 2 3
+			2 2 3
+			2 3 3
+			맨 뒤의 값을 null로 바꿔줘야 한다.
+			*/
 		}
+		subject[subjectCount-1] = null;
+		subjectCount--;
 	}
 
 	// getter setter

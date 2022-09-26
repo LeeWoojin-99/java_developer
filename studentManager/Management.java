@@ -118,7 +118,7 @@ public class Management implements Program {
 		int selectedStdIndex;
 
 		System.out.print("수강 철회할 ");
-		selectedStdIndex = this.selectStudent(scan);
+		selectedStdIndex = this.selectStudent(scan); // 학번으로 학생을 선택하기
 
 		loop1 :
 		while(true) {
@@ -129,13 +129,11 @@ public class Management implements Program {
 				System.out.println("철회하시려는 수강 과목의 코드를 입력해주세요");
 				subjectID = scan.next();
 				
-				for(int i=0; i<student[selectedStdIndex].getSubjectCount(); i++) {
-//					System.out.println("for문 진입");
-					if(subjectID.equals(student[selectedStdIndex].getSubject()[i].getSubjectID())) {
-//						System.out.println("if문 진입");
-						student[selectedStdIndex].deleteSubject(subjectID);
+				for(int i=0; i<student[selectedStdIndex].getSubjectCount(); i++) { // 선택된 학생의 수강 과목이 있는 만큼 반복
+					if(subjectID.equals(student[selectedStdIndex].getSubject()[i].getSubjectID())) { // 철회 하려는 수강 과목의 코드와 같은 값이 있다면
+						student[selectedStdIndex].deleteSubject(i);
 						System.out.println("수강 철회를 완료하였습니다.");
-						break loop1;
+						continue loop1; // 수강 철회를 선택하는 곳으로 돌아가기
 					}
 				}
 				System.out.println("없는 코드입니다. 다시 입력해주세요.");
@@ -144,10 +142,7 @@ public class Management implements Program {
 			}else {
 				System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
 			}
-			
-			
 		}
-
 	}
 	
 	public int selectStudent(Scanner scan) {
