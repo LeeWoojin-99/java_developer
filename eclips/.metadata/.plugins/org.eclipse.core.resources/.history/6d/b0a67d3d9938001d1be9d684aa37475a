@@ -1,8 +1,0 @@
-import Day0920.Card;
-
-public class LWJ {
-	public static void main(String[] args) {
-		int count = 5;
-		System.out.println((int)Math.random()*(count--+1));
-	}
-}

@@ -1,7 +1,0 @@
-package Day0920;
-
-public class method09 {
-	public static void main(String[] args) {
-		// calc(1, 2, +) => 3
-	}
-}

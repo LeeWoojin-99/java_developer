@@ -1,0 +1,28 @@
+package Day0926;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+public class Map01 {
+	public static void main(String[] args) {
+		
+		HashMap<String, Integer> map = new HashMap<>();
+		
+		map.put("햄버거", 15000);
+		map.put("햄버거", 15001); // 덮어쓰기
+		map.put("피자", 20000);
+//		System.out.println(map.get("햄버거"));
+//		System.out.println(map.size());
+//		System.out.println(map.containsKey("사탕"));
+		
+		Set<Map.Entry<String, Integer>> set = map.entrySet();
+		Iterator<Map.Entry<String, Integer>> it = set.iterator();
+
+		while(it.hasNext()) {
+			Map.Entry<String, Integer> tmp = it.next();
+			System.out.println(tmp.getKey()+tmp.getValue());
+		}
+	}
+}

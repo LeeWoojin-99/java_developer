@@ -1,8 +1,0 @@
-package Day0920;
-
-public class LWJ {
-	public static void main(String[] args) {
-		Card card = new Card();
-		card.print();
-	}
-}
