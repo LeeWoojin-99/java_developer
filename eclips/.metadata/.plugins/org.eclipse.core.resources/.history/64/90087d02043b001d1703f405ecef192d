@@ -1,0 +1,15 @@
+package Day0923;
+
+import java.util.Calendar;
+import java.util.Date;
+
+public class DateEx01 {
+	public static void main(String[] args) {
+		Date d = new Date(); // depercated 비권장되는
+		d.getDate();
+		
+		Calendar c = Calender.getinstance();
+		System.out.println(c.after(1));
+		
+	}
+}

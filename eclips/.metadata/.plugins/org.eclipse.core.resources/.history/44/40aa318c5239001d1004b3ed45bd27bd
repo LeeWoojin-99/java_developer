@@ -1,0 +1,27 @@
+package Day0921;
+
+public class class07 {
+	public static void main(String[] args) {
+		/*
+		 * 학생 정보의 클래스
+		 * Student
+		*/
+		
+	}
+}
+
+class Studen {
+	private String name;
+	private int age;
+	private int phoneNumber;
+	
+	public void printName() {
+		System.out.println("이름은 "+name+"입니다.");
+	}
+	public void printAge() {
+		System.out.println("나이는 "+age+"입니다.");
+	}
+	public void printPN() {
+		System.out.println("전화번호는 "+phoneNumber+"입니다.");
+	}
+}

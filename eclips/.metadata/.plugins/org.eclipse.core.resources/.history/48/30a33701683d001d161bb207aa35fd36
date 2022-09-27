@@ -1,0 +1,18 @@
+package Lotto;
+
+public class LottoE extends Lotto{
+	public LottoE() {
+		super();
+		int random;
+		int temp[] = new int[7];
+		while(true) {
+			random = (int)(Math.random()*9)+1;
+			if(checkDuplication(super.lottoArr, random)) {
+				System.arraycopy(super.lottoArr, 0, temp, 0, super.lottoArr.length);
+				temp[6] = random;
+				super.lottoArr = temp;
+				break;
+			}
+		}
+	}
+}

@@ -1,0 +1,7 @@
+package Day0921;
+
+public class 상속03 {
+	public static void main(String[] args) {
+		
+	}
+}

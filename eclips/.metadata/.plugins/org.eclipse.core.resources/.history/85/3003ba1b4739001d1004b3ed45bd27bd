@@ -1,0 +1,30 @@
+package Day0921;
+
+public class class06 {
+	public static void main(String[] args) {
+		
+	}
+}
+
+class TV {
+	private boolean power;
+	private String brand;
+	
+	public TV() {
+		power = false;
+		brand = "EZEN";
+	}
+	public void powerToggle() {
+		power = !power;
+	}
+	public void printPower() {
+		System.out.println(power);
+	}
+	public String getBrand() {
+		return brand;
+	}
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+}

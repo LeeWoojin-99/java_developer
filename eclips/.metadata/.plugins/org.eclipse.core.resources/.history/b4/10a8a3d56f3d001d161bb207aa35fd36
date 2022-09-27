@@ -1,0 +1,13 @@
+package Lotto;
+
+public class LottoE extends Lotto{
+	public LottoE() {
+		super();
+	}
+	
+	
+	
+	public void createLottoAutoE() {
+		
+	}
+}

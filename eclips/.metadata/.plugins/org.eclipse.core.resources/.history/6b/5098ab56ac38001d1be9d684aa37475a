@@ -1,0 +1,38 @@
+package Day0920;
+
+public class method09 {
+	public static void main(String[] args) {
+		// calc(1, 2, +) => 3
+		// 오버로딩을 통하여 실수표현도 가능하게끔 작성하기
+		
+	}
+	
+	static void calc(int a, int b, char c) {
+		
+		switch(c) {
+		case '+':
+			System.out.println(sum(a, b));
+		case '-':
+			System.out.println(sub(a, b));
+		case '*':
+			System.out.println(mul(a, b));
+		case '/':
+			System.out.println(div(a, b));
+		default:
+			break;
+		}
+		
+	}
+	static int sum(int a, int b) {
+		return a+b;
+	}
+	static int sub(int a, int b) {
+		return a-b;
+	}
+	static int mul(int a, int b) {
+		return a*b;
+	}
+	static int div(int a, int b) {
+		return a/b;
+	}
+}

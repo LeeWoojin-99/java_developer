@@ -1,0 +1,11 @@
+package Day0923;
+
+import java.util.Random;
+
+public class RandomEx01 {
+	public static void main(String[] args) {
+		Random r = new Random();
+		int r1 = r.nextInt(6)+1;
+		System.out.println(r1);
+	}
+}

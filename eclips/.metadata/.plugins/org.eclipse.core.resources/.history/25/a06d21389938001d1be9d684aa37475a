@@ -1,0 +1,7 @@
+import Day0920.Card;
+
+public class LWJ {
+	public static void main(String[] args) {
+		System.out.println((int)Math.random()*(10--+1));
+	}
+}

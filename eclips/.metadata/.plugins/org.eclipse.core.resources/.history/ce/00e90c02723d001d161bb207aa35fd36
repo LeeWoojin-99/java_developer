@@ -1,0 +1,10 @@
+package Lotto;
+
+import java.util.Scanner;
+
+public class LottoE extends Lotto{
+	public LottoE() {
+		super();
+		super.lottoArr = new int[7];
+	}
+}

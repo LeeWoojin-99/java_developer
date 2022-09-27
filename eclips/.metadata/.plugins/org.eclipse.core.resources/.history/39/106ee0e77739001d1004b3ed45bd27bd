@@ -1,0 +1,10 @@
+package Day0921;
+
+public class LWJ {
+	public static void main(String[] args) {
+		EzenComputer a = new EzenComputer();
+		a.printStudent();
+		a.addCourse("Java", "1개월");
+		a.printCourse();
+	}
+}

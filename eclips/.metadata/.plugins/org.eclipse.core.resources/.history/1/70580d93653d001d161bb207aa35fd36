@@ -1,0 +1,22 @@
+package Lotto;
+
+public class Lotto {
+	int lottoArr[] = new int[6];
+	
+	public void Lotto() {
+		for(int i=0; i<lottoArr.length; i++) {
+			lottoArr[i] = (int)(Math.random()*9)+1;
+		}
+	}
+	
+	public boolean checkDuplication(int arr[], int num) {
+		for(int i=0; i<arr.length; i++) {
+			if(arr[i] == num) { // 같은 값을 만났다면 false 반환
+				return false;
+			}else if(arr[i] == 0) { // 같은 값을 찾지 못한 채로 입력된 숫자들을 모두 지나쳤다면 
+				break; // break하여 true를 return하도록 유도
+			}
+		}
+		return true;
+	}
+}

@@ -1,0 +1,19 @@
+package Day0923;
+
+import java.math.BigDecimal;
+
+public class BigDecimalEx {
+	public static void main(String[] args) {
+		
+		/*
+		BigDecimal
+		값을 초기화하기 위해서는 문자열로 값을 넘겨준다.
+		
+		*/
+		BigDecimal bd1 = new BigDecimal("100000.1234");
+		BigDecimal bd2 = new BigDecimal("100000.1234");
+		
+		System.out.println(bd1+bd2);
+		
+	}
+}

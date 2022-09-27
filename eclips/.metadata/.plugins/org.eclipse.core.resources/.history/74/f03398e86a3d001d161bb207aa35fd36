@@ -1,0 +1,38 @@
+package Lotto;
+
+import java.util.Scanner;
+
+public class App {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Management mg = new Management();
+		String input;
+
+		loop:
+		while(true) {
+			System.out.println();
+			input = sc.next();
+			
+			switch(input) {
+			case "1":
+				break;
+			case "2":
+				break;
+			case "3":
+				break;
+			case "4":
+				break;
+			case "5":
+				break;
+			case "6":
+				System.out.println("프로그램을 종료합니다.");
+				break loop;
+			default:
+				System.out.println("올바르지 않은 입력입니다. 다시 입력해주세요.");
+				break;
+			}
+		}
+		
+		sc.close();
+	}
+}

@@ -1,0 +1,90 @@
+package Day0919;
+
+import java.util.Scanner;
+
+public class BaseBallGame {
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		int size = 3; 
+		int computerInt[] = createRandomArr(size);
+		printArr(computerInt); // test code
+		String userStr[] = scan.next().split("");
+		int userInt[] = new int[size];
+		
+		for(int i=0; i<userStr.length; i++) {
+			userInt[i] = Integer.parseInt(userStr[i]);
+		}
+		printArr(userInt); // test code
+
+		System.out.println(ball(computerInt, userInt));
+//		System.out.printf("%dS %dB \n", strike(computerInt, userInt), ball(computerInt, userInt));
+		
+		scan.close();
+		
+	}   
+	
+    static boolean checkDuplication(int arr[], int num) {
+    	// 중복 확인 메서드
+    	// duplication : 중복
+        for(int i:arr) if(i == num) return false;
+        return true;
+    }
+    
+    static int random(int size) {
+        // 1~size의 랜덤한 수를 반환하는 메서드
+        return (int)(Math.random()*size)+1;
+    }
+    
+    static int[] createRandomArr(int size) {
+    	// size만큼의 크기를 가지는 배열을
+    	// 랜덤한 값으로 채워서 반환하는 메서드
+    	
+    	int arr[] = new int[size];
+    	
+    	for(int i=0; i<arr.length; i++) {
+    		int random = random(9);
+    		while(true) {
+    			if(checkDuplication(arr, random)) {
+    				arr[i] = random;
+    				break;
+    			}
+    		}
+    	}
+    	
+    	return arr;
+    }
+    
+    // strike method
+    static int strike(int computer[], int user[]) {
+    	int count = 0;
+    	for(int i=0; i<computer.length; i++) {
+    		System.out.println(computer.length); // test code
+    		for(int j=0; i<user.length; j++) {
+    			System.out.println("j for문 진입");
+    			System.out.printf("computer[%d]:%d vs user[%d]:%d\n", i, computer[i], j, user[j]); // test code
+    			if(computer[i] == user[j] && i == j) count++;
+    			System.out.println("if문 후");
+    		}
+    	}
+    	return count;
+    }
+    
+    // ball method
+    static int ball(int computer[], int user[]) {
+    	int count = 0;
+    	for(int i=0; i<computer.length; i++) {
+    		for(int j=0; i<user.length; j++) {
+    			if(computer[i] == user[j] && i != j) count++;
+    		}
+    	}
+    	return count;
+    }
+    
+    // print arr
+    static void printArr(int arr[]) {
+    	for(int i: arr) System.out.print(i+" ");
+    	System.out.println();
+    }
+}

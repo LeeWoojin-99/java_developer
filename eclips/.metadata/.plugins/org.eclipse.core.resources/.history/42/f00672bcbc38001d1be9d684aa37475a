@@ -1,0 +1,24 @@
+package Day0920;
+
+public class class05 {
+	public static void main(String[] args) {
+		
+	}
+}
+
+/*
+ * TV Class
+ * power
+ * printPower
+ * 
+ * channel
+ * chUp
+ * chDown
+ * 
+ * volume
+ * volUp
+ * volDown
+ * 
+ * channel혹은 volume이 up down시 print
+ * 
+*/

@@ -1,0 +1,16 @@
+package Lotto;
+
+public class LottoE extends Lotto{
+	public LottoE() {
+		super();
+	}
+	
+	
+	
+	public void createLottoAutoE() {
+		int[] temp = new int[7];
+		System.arraycopy(super.lottoArr, 0, temp, 0, super.lottoArr.length);
+		temp[6] = createRandomNumber(super.lottoArr);
+		super.lottoArr = temp;
+	}
+}

@@ -1,0 +1,18 @@
+package Day0926;
+
+import java.util.Scanner;
+
+public class LWJ {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		String input = sc.next();
+		System.out.println("test"+input);
+		
+		String arr;
+		System.out.println("입력");
+		arr = sc.nextLine();
+		
+		sc.close();
+	}
+}

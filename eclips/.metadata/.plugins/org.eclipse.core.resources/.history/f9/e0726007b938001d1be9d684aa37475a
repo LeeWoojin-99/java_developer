@@ -1,0 +1,16 @@
+package Day0920;
+
+public class class04 {
+	
+}
+
+class Car{
+	private String color;
+	private int door;
+	private int airback;
+	private boolean power;
+	
+	public Car() {
+		
+	}
+}

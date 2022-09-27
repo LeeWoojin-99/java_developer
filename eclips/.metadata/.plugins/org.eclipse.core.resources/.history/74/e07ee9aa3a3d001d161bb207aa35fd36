@@ -1,0 +1,120 @@
+package studentManager;
+
+import java.util.Scanner;
+
+public class Management implements Program {
+	Student student[] = new Student[9]; // 학생의 정보가 담길 Student형 배열
+	int stdCount = 0;
+	int selectedStdCount = -1;
+
+	@Override
+	public void printStudent() {
+		for(int i=0; i<stdCount; i++){
+			student[i].printStudent();
+		}
+	}
+
+	@Override
+	public void insertStudent(Scanner scan) {
+		// 학생을 추가
+		String studentID, name, personalID, faculty, department;
+		
+		// 학생 정보 입력
+		System.out.println("학생의 정보를 입력해주세요");
+		System.out.println("학번, 이름, 주민번호, 학부, 학과");
+		studentID = scan.next();
+		name = scan.next();
+		personalID = scan.next();
+		faculty = scan.next();
+		department = scan.next();
+		
+		student[stdCount] = new Student(studentID, name, personalID, faculty, department); // Student형 객체 생성
+		student[stdCount].printStudent();
+
+		stdCount++;
+		if(stdCount == student.length) {
+			// 배열이 꽉 찼을 때
+			// 배열을 확장
+			Student studentTemp[] = new Student[student.length+1];
+			for(int i=0; i<studentTemp.length; i++) {
+				studentTemp[i] = student[i];
+			}
+			System.out.println("student배열을 확장하였습니다.");
+		}
+		System.out.println("학생 등록을 완료하였습니다");
+	}
+
+	@Override
+	public void searchStudent(Scanner scan) {
+		// 학생 검색
+		System.out.println("검색할 학생의 학번을 입력해주세요");
+		String searchStudentID = scan.next();
+		for(int i=0; i<stdCount; i++){
+			if(student[i].getStudentID().equals(searchStudentID)){
+				student[i].printStudent();
+			}
+		}
+	}
+
+	@Override
+	public void registerSubject(Scanner scan) {
+		// 수강 신청
+		String subjectID, name, credit, time, professor;
+		String input;
+		
+		while(true) {
+			System.out.println("수강 신청할 학생의 학번을 입력해주세요");
+			System.out.println("뒤로 가시려면 q를 입력해주세요");
+			input = scan.next();
+			if(input.equals("q")) break;
+			for(int i=0; i<stdCount; i++){
+				if(student[i].getStudentID().equals(input)){
+					selectedStdCount = i;
+					System.out.println("수강 신청을 할 학생의 정보입니다.");
+					student[i].printStudent();
+					break;
+				}else {
+					System.out.println("입력하신 학번의 학생이 없습니다.");
+				}
+			}
+			if(selectedStdCount != -1) break;
+		}
+		
+		while(true) {
+			if(input.equals("q")) break;
+			System.out.println("수강 신청을 하시겠습니까? (y/n)");
+			input = scan.next();
+			if(input.equals("y")) {
+				System.out.println("수강 신청을 합니다.");
+				System.out.println("수강 과목에 대한 정보를 입력해주세요");
+				System.out.println("과목 코드, 과목명, 학점, 시수, 교수명");
+				subjectID = scan.next();
+				name = scan.next();
+				credit = scan.next();
+				time = scan.next();
+				professor = scan.next();
+				
+				student[selectedStdCount].registerSubject(subjectID, name, credit, time, professor);
+			}else if(input.equals("n")){
+				break;
+			}else {
+				System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
+			}
+		}
+
+
+	}
+
+	@Override
+	public void deleteSubject(Scanner scan) {
+		// 수강 철회
+		String subjectID;
+
+		System.out.println("수강 철회를 합니다.");
+		System.out.println("철회하시려는 수강 과목의 코드를 입력해주세요");
+		subjectID = scan.next();
+
+		student[selectedStdCount].deleteSubject(subjectID);
+	}
+
+}

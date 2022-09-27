@@ -1,0 +1,8 @@
+package Day0921;
+
+public class LWJ {
+	public static void main(String[] args) {
+		EzenComputer s1 = new EzenComputer("홍길동", "24", "01011112222");
+		s1.printStudent();
+	}
+}

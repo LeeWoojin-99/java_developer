@@ -1,0 +1,19 @@
+package studentManager;
+
+import java.util.Scanner;
+
+public class Student {
+
+	Scanner sc = new Scanner(System.in);
+	Subject subject[] = new Subject[9]; // 수강 과목의 정보가 담길 Subject형 배열
+	String studentID, name, personalID, faculty, department;
+	
+	public Student(String studentID, String name, String personalID, String faculty, String department) {
+		
+		
+		
+	}
+	
+	public void printStudent() {
+	}
+}

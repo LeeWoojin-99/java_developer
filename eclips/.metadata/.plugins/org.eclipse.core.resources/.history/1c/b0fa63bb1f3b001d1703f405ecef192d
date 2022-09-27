@@ -1,0 +1,16 @@
+package studentManager;
+
+import java.util.Scanner;
+
+public class Student {
+
+	Scanner sc = new Scanner(System.in);
+	Subject subject[] = new Subject[9]; // 수강 과목의 정보가 담길 Subject형 배열
+	
+	public Student() {
+		System.out.println("학생의 정보를 입력해주세요");
+		System.out.println("학번, 이름, 주민번호, 학부, 학과");
+		
+		name = sc
+	}
+}

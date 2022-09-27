@@ -1,0 +1,28 @@
+package Day0920;
+
+public class class04 {
+	
+}
+
+class Car{
+	private String color;
+	private int door;
+	private int airback;
+	private boolean power;
+	
+	public Car(String color) {
+		this.color = color;
+	}
+	public Car(String color, int door) {
+		this(color);
+		this.door = door;
+	}
+	public Car(String color, int door, int airback) {
+		this(color, door); // 생성자 호출
+		this.airback = airback;
+	}
+	public Car(String color, int door, int airback, boolean power) {
+		this(color, door, airback); // 생성자 호출
+		this.power = power;
+	}
+}

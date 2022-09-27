@@ -1,0 +1,10 @@
+package Day0923;
+
+public class Wrapper {
+	public static void main(String[] args) {
+		/*
+		Wapper 클래스는 기본자료형을 클래스로 변환한 것
+		값을 넣어주지 않아도 null값을 기본으로 가지는 차이점이 있다.
+		*/
+	}
+}

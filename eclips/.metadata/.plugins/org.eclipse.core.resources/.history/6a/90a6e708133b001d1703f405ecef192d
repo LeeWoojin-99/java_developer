@@ -1,0 +1,23 @@
+package Day0923;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegularExpressioinEx01 {
+	public static void main(String[] args) {
+		System.out.println("정 규 표 현 식");
+		// (02|010)-\d{3,4}-\d{4} => 010-1234-5678
+		
+		String strArr[] = {"bat", "baby", "ca", "cb", "coffee",
+				"car", "date", "disc", "count", "banana"};
+		Pattern pattern = Pattern.compile("c[a-zA-Z]*");
+		for(String i: strArr) {
+			Matcher matcher = pattern.matcher(i);
+			if(matcher.matches()) { // 패턴 일치가 되면 true
+				System.out.println(i);
+			}
+			
+		}
+		
+	}
+}

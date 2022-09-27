@@ -1,0 +1,27 @@
+package Lotto;
+
+import java.util.Scanner;
+
+public class LottoE extends Lotto{
+	public LottoE() {
+		super();
+		super.lottoArr = new int[7];
+	}
+	
+	public void createLotto(Scanner sc) throws Exception {
+		// 수동
+		System.out.println("로또 번호를 입력해주세요.");
+		
+		for(int i=0; i<lottoArr.length; i++) {
+			lottoArr[i] = sc.nextInt();
+		}
+	}
+	
+	public void createLottoAuto() {
+		// 자동
+		int[] temp = new int[7];
+		System.arraycopy(super.lottoArr, 0, temp, 0, super.lottoArr.length);
+		temp[6] = createRandomNumber(super.lottoArr);
+		super.lottoArr = temp;
+	}
+}

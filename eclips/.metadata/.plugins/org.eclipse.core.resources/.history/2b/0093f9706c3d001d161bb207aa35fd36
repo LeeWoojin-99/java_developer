@@ -1,0 +1,13 @@
+package Day0926;
+
+import java.util.Scanner;
+
+public class LWJ {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println(sc.nextInt());
+		
+		sc.close();
+	}
+}

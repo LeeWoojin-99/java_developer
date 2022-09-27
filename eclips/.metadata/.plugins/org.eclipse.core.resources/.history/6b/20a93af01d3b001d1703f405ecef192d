@@ -1,0 +1,9 @@
+package studentManager;
+
+public class Student {
+
+	Subject subject[] = new Subject[9]; // 수강 과목의 정보가 담길 Subject형 배열
+	public Student() {
+		
+	}
+}

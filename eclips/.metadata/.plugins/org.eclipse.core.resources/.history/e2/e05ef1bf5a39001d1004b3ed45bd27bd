@@ -1,0 +1,23 @@
+package Day0921;
+
+public class 상속01 {
+	public static void main(String[] args) {
+		/*
+		 * class B extends A{}
+		 * B는 A를 상속받는다.
+		*/
+		B b = new B();
+		b.print();
+	}
+}
+
+class A{
+	private int a, b, c;
+	protected int d, e, f;
+}
+
+class B extends A{
+	public void print() {
+		System.out.println(d);
+	}
+}
