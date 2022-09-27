@@ -1,0 +1,46 @@
+package Day0927;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+
+public class List01 {
+	public static void main(String[] args) {
+		
+		ArrayList<String> list = new ArrayList<String>();
+		ArrayList<String> list1 = new ArrayList<>();
+		
+		list.add("밥먹기");
+		list.add("b");
+		list.add("c");
+		list.add("a");
+		
+		Iterator<String> it = list.iterator();
+		
+		list.remove(0);
+		
+		list1.add("a");
+		list1.add("b");
+		list1.add("c");
+		Iterator<String> it1 = list1.iterator();
+//		list.retainAll(list1); // 일치하는 값만 남기고 삭제
+		
+//		while(it1.hasNext()) System.out.println(it1.next());
+
+		Collections.sort(list);
+//		list.sort(new Test());
+		for(String i: list) System.out.println(i);
+		
+	}
+}
+class Test implements Comparator<String>{
+
+	@Override
+	public int compare(String o1, String o2) {
+		// TODO Auto-generated method stub
+		
+		return o1.compareTo(o2); // 오름차순
+	}
+	
+}

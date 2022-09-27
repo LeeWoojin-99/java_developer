@@ -1,0 +1,63 @@
+package Day0927;
+
+import java.util.ArrayList;
+
+public class List02 {
+	public static void main(String[] args) {
+		/*		
+		메뉴판
+		1. 햄버거 : 1.5
+		2. 피자 : 2.0
+		3. 음료 : 0.2
+		4. 과자 : 0.1
+		5. 사탕 : 0.05
+		6. 주문 종료
+		7. 프로그램 종료
+		
+		1 > 수량 선택 > 2개 > 3.0 > 메뉴판
+		0 > 주문 종료 > 주문한 메뉴 나타내기
+		선택한 메뉴
+		햄버거 ~개 : ~~
+		피자 ~개 : ~~
+		주문하신 금액은 ~~입니다.
+		*/
+		FoodManager FM = new FoodManager();
+		
+	}
+}
+class FoodManager{
+	ArrayList<String> foods = new ArrayList<>() ; // 음식 종류
+	ArrayList<Integer> amount = new ArrayList<>(); // 수량
+	ArrayList<Double> price = new ArrayList<>(); // 가격
+	int totalPrice;
+	
+	public FoodManager(){
+		// 음식 종류
+		foods.add("햄버거");
+		foods.add("피자");
+		foods.add("음료");
+		foods.add("과자");
+		foods.add("사탕");
+		
+		// 각 음식의 가격
+		price.add(1.5);
+		price.add(2.0);
+		price.add(0.2);
+		price.add(0.1);
+		price.add(0.05);
+		
+		amount.add(0);
+		amount.add(0);
+		amount.add(0);
+		amount.add(0);
+		amount.add(0);
+		
+//		System.out.println(amount.get(1));
+		System.out.println("생성자 완료");
+	}
+	
+	
+	
+	
+	
+}

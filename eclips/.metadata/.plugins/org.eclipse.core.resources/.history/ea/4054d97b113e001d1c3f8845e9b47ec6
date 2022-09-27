@@ -1,0 +1,24 @@
+package Day0927;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Collection01 {
+	public static void main(String[] args) {
+		
+//		ArrayList<Integer> arrList = new ArrayList<Integer>();
+		List arrList = new ArrayList(); // 모든 객체를 저장할 수 있다.
+		
+//		arrList.add(1);
+//		arrList.add(2);
+//		arrList.add(3);
+		
+		System.out.println(arrList.get(0));
+//		System.out.println(arrList[0]); // error
+		for(int i: arrList) {
+			System.out.print(i+" ");
+		}
+		System.out.println();
+		
+	}
+}

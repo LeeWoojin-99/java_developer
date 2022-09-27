@@ -1,0 +1,11 @@
+package Day0927;
+
+import java.util.ArrayList;
+
+public class LWJ {
+	public static void main(String[] args) {
+		ArrayList<String> foods = new ArrayList<>();
+		foods.add("a");
+		System.out.println(foods);
+	}
+}
