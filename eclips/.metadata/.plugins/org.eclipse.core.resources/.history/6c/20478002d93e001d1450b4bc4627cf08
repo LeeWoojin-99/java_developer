@@ -1,0 +1,29 @@
+package Day0928;
+
+import java.util.HashMap;
+import java.util.Iterator;
+
+public class Map01 {
+	public static void main(String[] args) {
+		HashMap<String, Integer> map = new HashMap<>();
+		
+		map.put("국어", 89);
+		map.put("영어", 78);
+		map.put("수학", 84);
+		
+		System.out.println(map.get("국어"));
+		System.out.println(map.get("영어"));
+		System.out.println(map.get("수학"));
+		
+		System.out.println(map.entrySet()); // key value 
+		System.out.println(map.keySet()); // key
+		
+		for(String i: map.keySet()) System.out.println(i+" : "+map.get(i));
+		
+		Iterator<String> it = map.keySet().iterator();
+		while(it.hasNext()) {
+			String key = it.next();
+			System.out.println(key+" : "+map.get(key));
+		}
+	}
+}

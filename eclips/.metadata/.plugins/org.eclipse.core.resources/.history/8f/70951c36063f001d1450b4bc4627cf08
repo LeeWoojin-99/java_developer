@@ -1,0 +1,17 @@
+package Product;
+
+import java.util.HashMap;
+
+public class Product {
+	
+	private String menu;
+	private int price;
+	HashMap<String, Integer> map = new HashMap<>();
+	
+	public Product() {}
+	public Product(String menu, int price) {
+		this.menu = menu;
+		this.price = price;
+	}
+	
+}

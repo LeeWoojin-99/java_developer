@@ -1,48 +1,44 @@
-/* 
-3 3 6
- */
-import java.util.Arrays;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
+/* 
+10
+5
+2
+3
+1
+4
+2
+3
+5
+1
+7
+ */
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
-        int result = 0;
-        int count = 0;
-        int noon = 0;
-
-        int input[] = new int[3];
-        for(int i=0; i<input.length; i++){
-            input[i] = sc.nextInt();
+        int arr[] = new int[10000+1];
+        int num = Integer.parseInt(bf.readLine());
+        
+        for(int i=0; i<num; i++){
+            arr[Integer.parseInt(bf.readLine())]++;
         }
+        
+        StringBuilder sb = new StringBuilder();
 
-        loop:
-        for(int i=0; i<input.length; i++){
-            for(int j=i+1; j<input.length; j++){
-                if(input[i] == input[j]){
-                    noon = input[i];
-                    count ++;
-                    if(count == 2) break loop;
-                }
+        for(int i=1; i<arr.length; i++){
+            while(arr[i] > 0){
+                sb.append(i).append("\n");
+                arr[i] --;
             }
         }
-        
-/* 
-같은 눈이 3개가 나오면 10,000원+(같은 눈)×1,000원의 상금을 받게 된다. 
-같은 눈이 2개만 나오는 경우에는 1,000원+(같은 눈)×100원의 상금을 받게 된다. 
-모두 다른 눈이 나오는 경우에는 (그 중 가장 큰 눈)×100원의 상금을 받게 된다. 
-*/
-        if(count == 2){
-            result = 10000+noon*1000;
-        }else if(count == 1){
-            result = 1000+noon*100;
-        }else{
-            Arrays.sort(input);
-            result = input[2]*100;
-        }
-        
-        System.out.println(result);
+
+        System.out.println(sb);
 
         sc.close();
     }

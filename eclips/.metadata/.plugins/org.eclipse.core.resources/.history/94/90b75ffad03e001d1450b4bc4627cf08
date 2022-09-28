@@ -1,0 +1,19 @@
+package Day0928;
+
+import java.util.TreeSet;
+
+public class TreeSet01 {
+	public static void main(String[] args) {
+		TreeSet<Integer> set = new TreeSet<>();
+		
+		for(;set.size()<7;) set.add(random(9)); // for
+		
+//		while(set.size()<7) set.add(random(9)); // while
+		
+		System.out.println(set);
+	}
+	
+	static int random(int size) {
+		return (int)(Math.random()*size)+1;
+	}
+}

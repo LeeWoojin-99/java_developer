@@ -1,0 +1,36 @@
+package Day0928;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+
+public class ListEx02 {
+	public static void main(String[] args) {
+		/* 두 배열을 하나로 합치는 ArrayList를 구성 */
+		
+		int arr1[] = {3, 5, 4};
+		int arr2[] = {6, 1, 2};
+		
+		ArrayList<Integer> list = new ArrayList<>();
+		
+		for(int i: arr1) list.add(i);
+		for(int i: arr2) list.add(i);
+		
+		System.out.println(list);
+		
+		Collections.sort(list);
+		System.out.println(list);
+		
+		list.sort(new Comparator<Integer>() {
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				return o2.compareTo(o1);
+			}
+		});
+		System.out.println(list);
+		
+		Iterator<Integer> it = list.iterator();
+		System.out.println(list);
+	}
+}

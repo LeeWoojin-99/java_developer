@@ -1,0 +1,24 @@
+package Product;
+/*
+menu
+1. 메뉴 추가
+2. 메뉴판 보기
+3. 메뉴 주문
+   메뉴선택 > 수량 > 메뉴로 돌아가기
+4. 주문 리스트
+5. 프로그램 종료
+*/
+public class Management {
+
+	public void printMenu() {
+		System.out.println("- - - 선택지 - - -");
+		System.out.println("1. 메뉴 추가");
+		System.out.println("2. 메뉴판 보기");
+		System.out.println("3. 메뉴 주문");
+		System.out.println("4. 주문 리스트");
+		System.out.println("5. 프로그램 종료");
+		System.out.println("- - - - - - - - - -");
+		System.out.print("선택지를 입력해주세요 > ");
+	}
+	
+}
