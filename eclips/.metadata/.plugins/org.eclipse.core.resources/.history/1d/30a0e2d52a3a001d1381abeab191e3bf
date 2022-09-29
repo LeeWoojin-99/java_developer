@@ -1,8 +1,0 @@
-package Day0922;
-
-public class 참조변수의형변환02 {
-	public static void main(String[] args) {
-		P p1 = new P();
-		System.out.println(p1.num1);
-	}
-}
