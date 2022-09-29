@@ -1,0 +1,12 @@
+package Day0929;
+
+public class Sale<A, B> {
+	private A menu;
+	private B price;
+	
+	public Sale() {}
+	public Sale(A menu, B price) {
+		this.menu = menu;
+		this.price = price;
+	}
+}

@@ -1,9 +1,0 @@
-package Day0920;
-
-public class LWJ {
-	String a = "A";
-	String aa = "A";
-	if(a == aa) {
-		System.out.println("equal");
-	}
-}
