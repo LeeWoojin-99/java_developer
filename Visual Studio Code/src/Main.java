@@ -60,6 +60,7 @@ public class Main {
 
         ArrayList<Integer> mode = new ArrayList<>();
         mode.add(0);
+        int frequency = 0; // 이걸 이용하는 것부터 시작하기
         for(int i=0; i<arr.length; i++){
             if(mode.get(0) < arr[i]){
                 System.out.printf("arr[%d] : %d\n", i, arr[i]);
@@ -68,10 +69,12 @@ public class Main {
                 mode.add(arr[i]); // 0번지에는 빈도의 수
             }
             
-            if(i>4000){
-                mode.add(-4000+i); // 숫자 추가
-            }else{
-                mode.add(i);
+            if(mode.get(0) == arr[i]){
+                if(i>4000){
+                    mode.add(-4000+i); // 숫자 추가
+                }else{
+                    mode.add(i);
+                }
             }
         }
 
