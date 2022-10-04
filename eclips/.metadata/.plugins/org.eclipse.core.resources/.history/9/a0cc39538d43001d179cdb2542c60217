@@ -1,0 +1,74 @@
+package Day1004;
+
+import java.awt.*;
+
+public class BeepPrintEx {
+	public static void main(String[] args) {
+		// lambda식을 변수에 담기
+		Runnable fi = ()->{
+			Toolkit toolkit = Toolkit.getDefaultToolkit();
+			
+			for(int i=0; i<5; i++) {
+				toolkit.beep();
+				System.out.println("beep");
+				try {
+					Thread.sleep(500);
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+			}
+		};
+		
+		// 익명 객체를 이용
+		Runnable r1 = new Runnable() {
+			@Override
+			public void run() {
+				Toolkit toolkit = Toolkit.getDefaultToolkit();
+				
+				for(int i=0; i<5; i++) {
+					toolkit.beep();
+					System.out.println("beep");
+					try {
+						Thread.sleep(500);
+					} catch (Exception e) {
+						// TODO: handle exception
+						e.printStackTrace();
+					}
+				}
+			}
+		};
+		Thread t1 = new Thread(r1);
+		t1.start();
+		
+		// 람다식을 이용
+		Thread t2 = new Thread(()->{
+			Toolkit toolkit = Toolkit.getDefaultToolkit();
+			
+			for(int i=0; i<5; i++) {
+				toolkit.beep();
+				System.out.println("beep");
+				try {
+					Thread.sleep(500);
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		// 람다식을 변수에 담아서 사용
+		Thread t3 = new Thread(fi);
+		
+		for(int i=0; i<5; i++) {
+			System.out.println(i);
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
+		
+	}
+}

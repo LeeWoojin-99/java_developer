@@ -1,0 +1,29 @@
+package Day1004;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+
+public class LWJ {
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new FileReader("out.txt"));
+		
+		HashMap<String, Integer> map = new HashMap<>();
+		while(true) {
+
+			String line = br.readLine();
+			if(line == null) break;
+			
+			String name = line.split(" ")[0];
+			int score = Integer.parseInt(line.split(" ")[1]);
+			
+			map.put(name, score);
+		}
+		
+		System.out.println(map);
+		
+		br.close();
+	}
+}

@@ -1,8 +1,0 @@
-package Lotto;
-
-public class App {
-	public static void main(String[] args) {
-		Lotto a = new Lotto();
-		a.printLotto()
-	}
-}

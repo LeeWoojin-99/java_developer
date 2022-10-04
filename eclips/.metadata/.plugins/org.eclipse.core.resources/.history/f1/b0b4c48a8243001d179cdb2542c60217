@@ -1,0 +1,8 @@
+package Day1004;
+
+public class ThreadMain01 {
+	public static void main(String[] args) {
+		Thread01 t1 = new Thread01;
+		t1.start();
+	}
+}

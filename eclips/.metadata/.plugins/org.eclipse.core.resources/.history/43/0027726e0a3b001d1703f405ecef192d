@@ -1,7 +1,0 @@
-package Day0923;
-
-public class DataFormatEx01 {
-	public static void main(String[] args) {
-		System.out.printf("%d", 1);
-	}
-}

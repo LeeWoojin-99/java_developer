@@ -1,0 +1,14 @@
+package Day1004;
+
+public class ThreadJoinEx extends Thread{
+	public static void main(String[] args) {
+		
+	}
+
+	@Override
+	public void run() {
+		
+	}
+	
+	
+}

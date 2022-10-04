@@ -1,0 +1,22 @@
+package Day1004;
+
+public class ThreadMain03 {
+	public static void main(String[] args) {
+		Thread th1 = new Thread03("th1");
+		Thread th2 = new Thread03("th2");
+		Thread th3 = new Thread03("th3");
+		th3.setPriority(Thread.MAX_PRIORITY);
+		th3.start();
+		th1.start();
+		th2.start();
+//		for(int i=1; i<11; i++) {
+//			Thread th = new Thread03("thread"+i);
+//			if(i == 10) {
+//				th.setPriority(Thread.MAX_PRIORITY);
+//			}else {
+//				th.setPriority(Thread.MIN_PRIORITY);
+//			}
+//			th.start();
+//		}
+	}
+}

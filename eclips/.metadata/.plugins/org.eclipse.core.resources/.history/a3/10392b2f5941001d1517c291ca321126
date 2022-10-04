@@ -1,0 +1,14 @@
+package Day1001;
+
+public class LWJ {
+	public static void main(String[] args) {
+		
+		lambda var = (a, b) -> a + b;
+		System.out.println(var.plus(1, 2));
+		
+	}
+}
+
+interface lambda {
+	public int plus(int a, int b);
+}

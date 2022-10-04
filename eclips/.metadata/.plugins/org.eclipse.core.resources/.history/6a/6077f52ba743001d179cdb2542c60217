@@ -1,0 +1,9 @@
+package Day1004;
+
+public class FileOutPutStream01 {
+	public static void main(String[] args) {
+		// 파일에 쓰기
+		System.out.println("11");
+		
+	}
+}

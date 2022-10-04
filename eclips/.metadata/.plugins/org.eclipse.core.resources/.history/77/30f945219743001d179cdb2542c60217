@@ -1,0 +1,17 @@
+package Day1004;
+
+/*
+seq 변수를 가지는 쓰레드 생성
+*/
+public class ThreadJoinEx extends Thread{
+	public static void main(String[] args) {
+		
+	}
+
+	@Override
+	public void run() {
+		
+	}
+	
+	
+}

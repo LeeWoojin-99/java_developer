@@ -1,0 +1,7 @@
+package Day1004;
+
+public class FileObject {
+	public static void main(String[] args) {
+		System.out.println("D:\\이우진\\java_developer\\eclips\\Java_Project");
+	}
+}

@@ -1,0 +1,22 @@
+package Day1001;
+
+import java.util.Arrays;
+
+public class LWJ {
+	public static void main(String[] args) {
+		
+		int arr1[] = {3,1,2};
+		
+		int arr2 = Arrays.stream(arr1).sorted().toArray();
+		System.out.println(arr2);
+		
+		
+		lambda var = (a, b) -> a + b;
+		System.out.println(var.plus(1, 2));
+		
+	}
+}
+
+interface lambda {
+	public int plus(int a, int b);
+}

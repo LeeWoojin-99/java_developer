@@ -1,17 +1,17 @@
-
+import java.util.ArrayList;
 
 public class LWJ {
     public static void main(String[] args) {
-        int x=0;
-        for(int i=0; i<100; i++){
-            if(1<2){
-                if(1<2){
-                    x++;
-                    continue;
-                }
-                System.out.println("test");
-            }
-        } 
-        System.out.println(x);
+
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        for(int i=0; i<1; i++){
+            list = new ArrayList<>();
+
+        }
+        System.out.println(list);
+
     }
 }

@@ -1,0 +1,12 @@
+package Day1004;
+
+public class Thread03 extends Thread{
+	public Thread03(String name) {
+		setName(name); // thread의 이름을 바꾸기
+	}
+
+	@Override
+	public void run() {
+		
+	}
+}
