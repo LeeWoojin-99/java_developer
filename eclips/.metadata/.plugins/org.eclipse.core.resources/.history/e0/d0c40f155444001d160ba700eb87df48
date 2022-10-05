@@ -1,0 +1,56 @@
+package Day1005;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class LWJ {
+	public static void main(String[] args) throws IOException {
+		
+		HashMap<String, ArrayList<String>> map = new HashMap<>();
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String input;
+		do {
+			input = br.readLine();
+			switch(input) {
+			case "1": map = addWord(br, map); break;
+			case "2":  break;
+			default: System.out.println("잘못된 입력입니다. 다시 입력해주세요."); break;
+			
+			}
+		}while(input == "5");
+		
+	}
+	
+	static HashMap<String, ArrayList<String>> addWord(BufferedReader br, HashMap<String, ArrayList<String>> map) throws IOException {
+		String word;
+		ArrayList<String> list = new ArrayList<>();
+		String input;
+		System.out.print("단어를 입력해주세요 > ");
+		word = br.readLine();
+		
+		while(true) {
+			System.out.println("단어의 의미를 입력하시겠습니까? (y/n) > ");
+			input = br.readLine();
+			System.out.print(input);
+			if(input.equals("y")) {
+				System.out.println("단어의 의미를 입력해주세요");
+				list.add(br.readLine());
+			}else if(input == "n") {
+				System.out.println("단어의 의미 입력을 종료합니다.");
+				break;
+			}else {
+				System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
+			}
+		}
+		
+		map.put(word, list);
+		System.out.println(word);
+		System.out.println(list);
+		return map;
+			
+	}
+}

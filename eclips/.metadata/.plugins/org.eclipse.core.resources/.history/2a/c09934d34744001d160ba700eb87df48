@@ -1,0 +1,16 @@
+package Day1005;
+
+import java.util.StringTokenizer;
+
+public class LWJ {
+	public static void main(String[] args) throws Exception {
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append("a");
+		sb.append("b");
+		sb.insert(1, "c")
+		System.out.println(sb);
+		
+	}
+	
+}

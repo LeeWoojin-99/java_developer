@@ -1,0 +1,54 @@
+package Day1005;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class LWJ {
+	public static void main(String[] args) throws Exception {
+		
+		FileWriter f = new FileWriter("word.txt");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader br2 = new BufferedReader(new FileReader("word.txt"));
+		String input = "";
+		while(input != "5") {
+			printMenu();
+			switch(input) {
+			case "1":  break;
+			case "2":  break;
+			case "3":  break;
+			case "4":  break;
+			case "5": System.out.println("프로그램을 종료합니다."); break;
+			default: System.out.println("잘못된 입력입니다. 다시 입력해주세요."); break;
+			}
+			
+		}
+		
+		f.close();
+		
+	}
+	
+	static void printMenu() {
+		System.out.println("- - - MENU - - -");
+		System.out.println("1. 단어 등록");
+		System.out.println("2. 단어 검색");
+		System.out.println("3. 단어 수정");
+		System.out.println("4. 단어 출력");
+		System.out.println("5. 종료");
+		System.out.println("- - - - - - - -");
+		System.out.print("입력 > ");
+	}
+	
+	static void addWord(BufferedReader br, FileWriter f) throws IOException {
+		System.out.println("등록하실 단어 입력 > ");
+		f.write(br.readLine());
+		System.out.println("단어의 의미 입력 > ");
+		f.write(br.readLine());
+		f.write("--");
+	}
+	
+	static void printWord()
+	
+}

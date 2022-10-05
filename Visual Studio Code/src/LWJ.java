@@ -1,17 +1,20 @@
-import java.util.ArrayList;
+
+import java.util.Arrays;
 
 public class LWJ {
     public static void main(String[] args) {
 
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        for(int i=0; i<1; i++){
-            list = new ArrayList<>();
+        int arr[][] = {{1,2},{2,3},{3,4},{2,4}};
 
+        Arrays.sort(arr, (a, b)->{
+            if(a[0] == b[0]){
+                return a[1] - b[1];
+            }else return a[0] - b[0];
+        });
+
+        for(int i[]: arr){
+            for(int j: i) System.out.print(j+" ");
+            System.out.println();
         }
-        System.out.println(list);
-
     }
 }

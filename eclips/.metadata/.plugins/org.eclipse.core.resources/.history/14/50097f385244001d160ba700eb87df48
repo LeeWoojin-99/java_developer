@@ -1,0 +1,27 @@
+package Day1005;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class LWJ {
+	public static void main(String[] args) {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String input;
+		do {
+			input = br.readLine();
+			switch(input) {
+			case "1":  break;
+			case "1":  break;
+			default: System.out.println("잘못된 입력입니다. 다시 입력해주세요."); break;
+			
+			}
+		}while(input == "5");
+		
+	}
+	
+	static void printMenu() {
+		System.out.print("단어를 입력해주세요 > ");
+		System.out.print("단어의 입력를 입력해주세요 > ");
+	}
+}

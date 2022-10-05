@@ -1,0 +1,12 @@
+package Day1004;
+
+import java.util.Scanner;
+
+public class LWJ {
+	public static void main(String[] args) throws IOException {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println(sc.nextLine());
+		sc.close();
+	}
+}

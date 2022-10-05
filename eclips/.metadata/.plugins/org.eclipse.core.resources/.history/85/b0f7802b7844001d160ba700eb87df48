@@ -1,0 +1,19 @@
+package Bank;
+
+/*
+한 계좌의 정보에 대한 클래스
+
+계좌번호, 소유주, 잔고
+
+Bank-0001
+소유주와 초기 잔고는 생성 시에 입력받기
+*/
+
+public class Account {
+	private String name;
+	private long balance;
+	
+	public Account() {
+		
+	}
+}

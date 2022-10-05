@@ -1,0 +1,28 @@
+package Bank;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+
+public class Management {
+	
+	public void printMenu() {
+		System.out.println("- - - MENU - - -");
+		System.out.println("1. ~");
+		System.out.println("2. ~");
+		System.out.println("3. ~");
+		System.out.println("4. ~");
+		System.out.println("- - - - - - - - -");
+		System.out.print("입력 > ");
+	}
+
+	public void createAccount(BufferedReader br) throws IOException {
+		String name;
+		long balance;
+		System.out.print("소유주의 이름 입력 > ");
+		name = br.readLine();
+		System.out.print("초기 잔고 입력 > ");
+		balance = Long.parseLong(br.readLine());
+		
+	}
+
+}

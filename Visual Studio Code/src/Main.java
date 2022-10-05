@@ -1,98 +1,68 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Scanner;
 
 /* 
-산술평균 : N개의 수들의 합을 N으로 나눈 값
-중앙값 : N개의 수들을 증가하는 순서로 나열했을 경우 그 중앙에 위치하는 값
-최빈값 : N개의 수들 중 가장 많이 나타나는 값
-범위 : N개의 수들 중 최댓값과 최솟값의 차이
+2차원 평면 위의 점 N개가 주어진다.
+좌표를 x좌표가 증가하는 순으로,
+x좌표가 같으면 y좌표가 증가하는 순서로 정렬한 다음 출력하는 프로그램을 작성하시오.
 
-첫째 줄에는 산술평균을 출력한다. 소수점 이하 첫째 자리에서 반올림한 값을 출력한다.
-둘째 줄에는 중앙값을 출력한다.
-셋째 줄에는 최빈값을 출력한다. 여러 개 있을 때에는 최빈값 중 두 번째로 작은 값을 출력한다.
-넷째 줄에는 범위를 출력한다.
+첫째 줄에 점의 개수 N (1 ≤ N ≤ 100,000)이 주어진다.
+둘째 줄부터 N개의 줄에는 i번점의 위치 xi와 yi가 주어진다.
+(-100,000 ≤ xi, yi ≤ 100,000) 좌표는 항상 정수이고, 위치가 같은 두 점은 없다.
  */
 
 /* 
+입력 예제
 5
-1
-3
-8
--2
-2
+3 4
+1 1
+1 -1
+2 2
+3 3
 
-
-6
-1
--1
--2
--3
--1
--2
+1 -1
+1 1
+2 2
+3 3
+3 4
  */
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
+        Scanner sc = new Scanner(System.in);
 
-        int sum = 0;
-
-        int N = Integer.parseInt(br.readLine());
-        ArrayList<Integer> list = new ArrayList<>();
-        int arr[] = new int[8000];
-        // -4000 ~ -1, 0, 1 ~ 4000
-        // 3999 1 3999
-        // index 0 ~ 7999
-
+        int N = sc.nextInt();
         for(int i=0; i<N; i++){
-            int num = Integer.parseInt(br.readLine());
-            list.add(num);
-            sum += list.get(i);
+            int x, y;
+            x = sc.nextInt();
+            y = sc.nextInt();
 
-            // 최빈값을 위한 작업
-            if(num < 0){ // 음수
-                // -1은 4001번지에 담긴다.
-                arr[4000-num] ++;
-            }else arr[num] ++; // 자연수, 0
+            if(map.containsKey(x)){ // 같은 x좌표가 있다면
+                ArrayList<Integer> list = map.get(x);
+                list.add(y);
+                map.put(x, list);
+            }else{
+                map.put(x, new ArrayList<>(Arrays.asList(y)));
+            }
         }
 
-        ArrayList<Integer> mode = new ArrayList<>();
-        mode.add(0);
-        int frequency = 0; // 이걸 이용하는 것부터 시작하기
-        for(int i=0; i<arr.length; i++){
-            if(mode.get(0) < arr[i]){
-                System.out.printf("arr[%d] : %d\n", i, arr[i]);
-                mode = new ArrayList<Integer>(); // 새로운 빈도의 수가 등장했으므로 리스트 초기화
-                System.out.println(mode);
-                mode.add(arr[i]); // 0번지에는 빈도의 수
-            }
+        // System.out.println("- - - - result - - - -");
+        ArrayList<Integer> keyList = new ArrayList<>(map.keySet());
+        Collections.sort(keyList);
+        for(int x: keyList){
             
-            if(mode.get(0) == arr[i]){
-                if(i>4000){
-                    mode.add(-4000+i); // 숫자 추가
-                }else{
-                    mode.add(i);
-                }
+            ArrayList<Integer> list = map.get(x);
+            Collections.sort(list);
+            map.put(x, list);
+
+            for(int y: map.get(x)){
+                System.out.println(x+" "+y);
             }
         }
-
-        System.out.println(mode);
-
-        Collections.sort(list);
-        System.out.println(list);
-        
-        System.out.println(Math.round((double)sum/list.size())); // 산술평균
-        System.out.println(list.get((list.size()-1)/2)); // 중앙값
-        System.out.println(mode.size()>2? mode.get(2): mode.get(1)); // 최빈값
-        System.out.println(list.get(list.size()-1)-list.get(0)); // 범위
-
-
-
-
-
-
-
+        sc.close();
     }
 }

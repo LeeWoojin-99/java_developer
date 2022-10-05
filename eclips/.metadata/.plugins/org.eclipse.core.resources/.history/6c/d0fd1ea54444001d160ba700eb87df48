@@ -1,0 +1,15 @@
+package Day1005;
+
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
+public class LWJ {
+	public static void main(String[] args) throws Exception {
+		PrintWriter pw = new PrintWriter("writer2.txt");
+		for(int i=1; i<=10; i++) {
+			String data = i+"Test 입니다.";
+			pw.println(data);
+		}
+		pw.close();
+	}
+}
