@@ -1,0 +1,34 @@
+package Library;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+// App.java
+// Management.java
+// Book.java
+
+public class App {
+	public static void main(String[] args) throws NumberFormatException, IOException {
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Management mg = new Management();
+		
+		int input;
+		do {
+			mg.printMenu();
+			input = Integer.parseInt(br.readLine());
+		switch (input) {
+		case 1: 	break;
+		case 2: 	break;
+		case 3: 	break;
+		case 4: 	break;
+		case 5: 	break;
+		case 6: break;
+		default: System.out.println("시스템을 종료하겠습니다.");
+			break;
+		}
+		}while(input != 6);
+		System.out.println("시스템이 종료되었습니다.");
+	}
+}

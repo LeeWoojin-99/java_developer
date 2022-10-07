@@ -1,0 +1,15 @@
+package Library;
+
+public interface BookIF {
+	/*
+	 * 멤버변수
+	도서번호 / 도서명 / 대여 기간 / 대여 여부
+	*/
+	
+	private int bookNumber;
+	private String bookName;
+	private int period;
+	private boolean status;
+	
+	public void printBook();
+}

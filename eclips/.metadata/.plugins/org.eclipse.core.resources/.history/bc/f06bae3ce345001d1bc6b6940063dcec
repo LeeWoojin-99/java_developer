@@ -1,0 +1,81 @@
+package Library;
+
+public class Book implements BookIF{
+	
+	private int bookNumber; // 대여 번호
+	private String bookName; // 도서명
+	private int period;
+	private int rentalCharge; // 대여 금액
+	private boolean status; // 대여 여부
+	// false는 대여되지 않은 상태
+
+	public Book() {}
+	public Book(int bookNumber, String bookName) {
+		this.bookNumber = bookNumber;
+		this.bookName = bookName;
+		period = 0;
+		rentalCharge = 0;
+		status = false;
+	}
+	
+	@Override
+	public String toString() {
+		// 책의 정보를 문자열로 반환하는 기능
+		StringBuilder sb = new StringBuilder();
+		sb.append("- - -\'"+bookName+"\'"+"의 정보- - -\n");
+		sb.append("도서번호 : ").append(bookNumber).append("\n");
+		sb.append("도서명 : ").append(bookName).append("\n");
+		sb.append("대여 금액 : ").append(rentalCharge).append("\n");
+		sb.append("대여 가능 여부 : ").append(status==true?"불가능":"가능").append("\n");
+		sb.append("- - - - - - -")
+		return sb.toString();
+	}
+	
+	public void returnBook() {
+		period = 0;
+		rentalCharge = 0;
+		status = false;
+	}
+
+	
+	// getter setter
+	public int getBookNumber() {
+		return bookNumber;
+	}
+
+	public void setBookNumber(int bookNumber) {
+		this.bookNumber = bookNumber;
+	}
+
+	public String getBookName() {
+		return bookName;
+	}
+
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
+	}
+
+	public int getRentalCharge() {
+		return rentalCharge;
+	}
+
+	public void setRentalCharge(int rentalCharge) {
+		this.rentalCharge = rentalCharge;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	public int getPeriod() {
+		return period;
+	}
+	public void setPeriod(int period) {
+		this.period = period;
+	}
+	
+	
+}

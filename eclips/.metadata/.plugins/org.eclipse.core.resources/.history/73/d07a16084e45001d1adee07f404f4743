@@ -1,0 +1,20 @@
+package Library;
+
+public class Book implements BookIF{
+	
+	private int bookNumber; // 도서 번호
+	private String bookName; // 도서명
+	private int rentalCharge; // 대여 금액
+	private boolean status; // 대여 여부
+
+	@Override
+	public void printBook() {
+		// TODO Auto-generated method stub
+		StringBuilder sb = new StringBuilder();
+		sb.append("도서번호 : ").append(bookNumber).append("\n");
+		sb.append("도서명 : ").append(bookName).append("\n");
+		sb.append("대여 금액 : ").append(rentalCharge).append("\n");
+		sb.append("대여 여부 : ").append(status).append("\n");
+	}
+	
+}

@@ -1,9 +1,10 @@
 package Backjoon_Online_Judge;
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /* 
 2차원 평면 위의 점 N개가 주어진다.
@@ -32,38 +33,41 @@ x좌표가 같으면 y좌표가 증가하는 순서로 정렬한 다음 출력�
  */
 
 public class BOJ_11650 {
-    public static void main(String[] args) throws Exception {
-        HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        // Scanner sc = new Scanner(System.in);
+        // int n = sc.nextInt();
+        // int arr[][] = new int[n][2];
+        // for(int i=0; i<arr.length; i++){
+        //     arr[i][0] = sc.nextInt();
+        //     arr[i][1] = sc.nextInt();
+        // }
 
-        int N = sc.nextInt();
-        for(int i=0; i<N; i++){
-            int x, y;
-            x = sc.nextInt();
-            y = sc.nextInt();
-
-            if(map.containsKey(x)){ // 같은 x좌표가 있다면
-                ArrayList<Integer> list = map.get(x);
-                list.add(y);
-                map.put(x, list);
-            }else{
-                map.put(x, new ArrayList<>(Arrays.asList(y)));
-            }
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int arr[][] = new int[n][2];
+        for(int i=0; i<arr.length; i++){
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            arr[i][0] = Integer.parseInt(st.nextToken());
+            arr[i][1] = Integer.parseInt(st.nextToken());
         }
 
-        // System.out.println("- - - - result - - - -");
-        ArrayList<Integer> keyList = new ArrayList<>(map.keySet());
-        Collections.sort(keyList);
-        for(int x: keyList){
-            
-            ArrayList<Integer> list = map.get(x);
-            Collections.sort(list);
-            map.put(x, list);
+        Arrays.sort(arr, (a, b)->{
+            if(a[0] == b[0]){
+                return a[1] - b[1];
+            }else return a[0] - b[0];
+        });
+        
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i<arr.length; i++) sb.append(arr[i][0]+" "+arr[i][1]+"\n");
+        System.out.println(sb);
+        // for(int i=0; i<arr.length; i++) System.out.println(arr[i][0]+" "+arr[i][1]);
+        // for(int i=0; i<arr.length; i++){
+        //     for(int j=0; j<arr[i].length; j++){
+        //         System.out.print(arr[i][j]+" ");
+        //     }
+        //     System.out.println();
+        // }
 
-            for(int y: map.get(x)){
-                System.out.println(x+" "+y);
-            }
-        }
-        sc.close();
+        // br.close();
     }
 }

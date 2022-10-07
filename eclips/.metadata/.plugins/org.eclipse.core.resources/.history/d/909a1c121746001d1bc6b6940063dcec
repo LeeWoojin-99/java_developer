@@ -1,0 +1,14 @@
+package Day1007;
+
+public class LWJ {
+	public static void main(String[] args) {
+		String a = "a:b:c:d";
+        StringTokenizer st = new StringTokenizer(a, ":");
+        StringBuilder sb = new StringBuilder();
+        sb.append(st.nextToken());
+        while(st.hasMoreTokens()){
+            sb.append("#").append(st.nextToken());
+        }
+        System.out.println(sb);
+	}
+}

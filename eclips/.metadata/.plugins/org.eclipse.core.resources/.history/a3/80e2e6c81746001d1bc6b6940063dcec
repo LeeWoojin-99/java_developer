@@ -1,0 +1,28 @@
+package Day1007;
+
+import java.util.StringTokenizer;
+
+public class LWJ {
+	public static void main(String[] args) {
+		String a = "a:b:c:d";
+        StringTokenizer st1 = new StringTokenizer(a, ":");
+        StringBuilder sb1 = new StringBuilder();
+        sb1.append(st1.nextToken());
+        while(st1.hasMoreTokens()){
+            sb1.append("#").append(st1.nextToken());
+        }
+        System.out.println(sb1);
+        
+        System.out.println("\n- - - - - - -\n\n");
+        
+        String b = "12345";
+        String c[] = b.split("");
+        int d = 0;
+        for(String i: c) {
+        	System.out.print(i+"");
+        	d += Integer.parseInt(i);
+        }
+        System.out.println();
+        System.out.println(d);
+	}
+}

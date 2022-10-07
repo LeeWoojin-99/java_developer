@@ -1,0 +1,11 @@
+package Library;
+
+public interface BookIF {
+	
+	private int bookNumber; // 도서 번호
+	private String bookName; // 도서명
+	private int rentalCharge; // 대여 금액
+	private boolean status; // 대여 여부
+	
+	public void printBook();
+}

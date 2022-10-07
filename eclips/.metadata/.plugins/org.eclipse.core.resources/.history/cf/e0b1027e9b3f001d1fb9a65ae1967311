@@ -1,9 +1,0 @@
-package Day0929;
-
-public class LWJ {
-	public static void main(String[] args) {
-		Sale<String, Integer> sale = new Sale<>("햄버거", 1500);
-		System.out.println(sale.getMenu());
-		System.out.println(sale.getPrice());
-	}
-}

@@ -1,0 +1,44 @@
+package Day1007;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.StringTokenizer;
+
+public class LWJ {
+	public static void main(String[] args) {
+		String a = "a:b:c:d";
+        StringTokenizer st1 = new StringTokenizer(a, ":");
+        
+        StringBuilder sb1 = new StringBuilder();
+        
+        sb1.append(st1.nextToken());
+        while(st1.hasMoreTokens()){
+            sb1.append("#").append(st1.nextToken());
+        }
+        System.out.println(sb1);
+        
+        System.out.println("\n- - - - - - -\n");
+        
+        String b = "12345";
+        String c[] = b.split("");
+        int d = 0;
+        for(String i: c) {
+        	d += Integer.parseInt(i);
+        }
+        System.out.println(d);
+        
+        System.out.println("\n- - - - - - -\n\n");
+        
+        String e = "aaabbbccdeeef";
+        String f[] = e.split("");
+        ArrayList<String> list = new ArrayList<>(Arrays.asList(f));
+        HashSet<String> set = new HashSet<>(list);
+        for(String i: set) {
+        	System.out.print(i);
+        	System.out.print(Collections.frequency(list, i));
+        }
+	}
+}
