@@ -1,6 +1,0 @@
-package Library;
-
-public interface BookIF {
-	
-	public String toString();
-}
