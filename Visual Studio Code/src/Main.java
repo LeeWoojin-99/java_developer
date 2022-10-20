@@ -1,14 +1,16 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        int n = 10;
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
         ArrayList<Integer> list = new ArrayList<>();
         list.add(0);
         list.add(0);
         System.out.println(Fibonacci(list, n));
-
+        sc.close();
     }
     static int Fibonacci(ArrayList<Integer> list, int count){
         // System.out.println(list);
