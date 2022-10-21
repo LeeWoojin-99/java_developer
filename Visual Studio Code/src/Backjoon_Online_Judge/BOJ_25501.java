@@ -1,3 +1,4 @@
+package Backjoon_Online_Judge;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 /* 
@@ -9,7 +10,7 @@ ABCA
 PALINDROME
 
  */
-public class Main{
+public class BOJ_25501{
     public static int[] recursion(String s, int l, int r, int count){
         if(l >= r) return new int[]{1, count};
         else if(s.charAt(l) != s.charAt(r)) return new int[]{0, count};
